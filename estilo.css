@@ -36,16 +36,7 @@
   color: #d84315; /* Color ligeramente más claro al pasar el ratón */
 }
 
-/* Puedes añadir un pequeño icono o emoji al lado del título si quieres un toque extra */
-/* Por ejemplo:
-.category-title.for-save::before { content: '💰 '; }
-.category-title.more-flavor::before { content: '🍖 '; }
-.category-title.for-diet::before { content: '🥗 '; }
-Y luego añadir las clases `for-save`, `more-flavor`, `for-diet` a los respectivos <h3> en tu HTML
-*/
-
-/* Resto de tu CSS (sin cambios aquí) */
-/* Estilos para la Pantalla de Carga */
+/* --- ESTILOS PANTALLA DE CARGA --- */
 #preloader {
   position: fixed;
   top: 0;
@@ -442,36 +433,190 @@ body::before {
   transform: translateY(-5px) rotate(360deg);
 }
 
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
+/* ======================================= */
+/* --- MEDIA QUERIES para Responsividad ---*/
+/* ======================================= */
+
+/* Para pantallas medianas (tabletas y algunos portátiles pequeños) */
+@media (max-width: 1024px) {
   .section-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   .category-title {
-    font-size: 2rem; /* Ajustado para móviles */
+    font-size: 2.5rem;
   }
   .text-food-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
   .text-food-price {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
-  .social-btn {
-    width: calc(50% - 1rem); /* 2 botones por fila en móviles */
-  }
-  .social-buttons {
-    flex-direction: row; /* Asegura que se envuelvan */
-  }
-  .btn-order-whatsapp {
-    min-width: 250px;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+  .card {
+    padding: 2rem;
   }
 }
 
-@media (max-width: 480px) {
+/* Para pantallas pequeñas (teléfonos móviles y tabletas en vertical) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.8rem; /* Reduce un poco el padding general */
+  }
+
+  /* Header */
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 3rem; /* Ajusta el tamaño del título principal */
+    margin-bottom: 1.5rem;
+  }
+  header nav ul {
+    flex-wrap: wrap; /* Permite que los elementos del menú se envuelvan */
+    justify-content: center;
+    gap: 1rem; /* Espacio entre los ítems del menú */
+  }
+  header nav li a {
+    font-size: 0.9rem; /* Un poco más pequeño para los enlaces de navegación */
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* Secciones principales y títulos */
+  .section-title {
+    font-size: 2.2rem; /* Tamaño más adecuado para móviles */
+    margin-bottom: 2rem;
+  }
+
+  .category-title {
+    font-size: 2rem; /* Ajustado para móviles */
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  .category-title::after {
+    width: 80px; /* Línea más corta */
+  }
+
+  /* Cards del menú */
+  .grid {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+    gap: 1.5rem; /* Espacio entre las tarjetas */
+  }
+  .card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .text-food-title {
+    font-size: 1.3rem; /* Título de comida más pequeño */
+  }
+  .text-food-price {
+    font-size: 1.7rem; /* Precio de comida más pequeño */
+  }
+  .text-gray-600 { /* Descripción de comida */
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Botones */
+  .btn-primary {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.6rem;
+    margin-top: 2rem; /* Asegura espacio si estaba muy pegado */
+  }
+  .btn-order-whatsapp {
+    font-size: 1.1rem; /* Ajuste para el botón de WhatsApp */
+    padding: 1rem 1.8rem;
+    width: 90%; /* Ocupa más ancho en móvil */
+    max-width: 320px; /* Limita el ancho máximo para no ser demasiado grande */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex; /* Asegura que se centre bien con auto margins */
+  }
+  .btn-order-whatsapp .social-icon {
+    font-size: 1.3rem;
+    margin-right: 0.8rem;
+  }
+
+  /* Imagen de la tienda */
+  .store-image {
+    max-width: 90%; /* Se adapta al ancho disponible */
+    border-radius: 1.5rem; /* Bordes un poco menos redondeados */
+    margin-bottom: 2.5rem;
+  }
+
+  /* Oferta de Complemento */
+  .text-center.p-6 {
+    padding: 1.5rem;
+  }
+  .text-center p.text-xl { /* Título de complemento */
+    font-size: 1.3rem;
+  }
+  .text-center p.text-lg { /* Descripción de complemento */
+    font-size: 1rem;
+  }
+
+  /* Ubicación (Mapa) */
+  iframe {
+    height: 300px; /* Mapa más pequeño en móvil */
+  }
+
+  /* Footer y botones sociales */
+  .social-buttons {
+    flex-direction: column; /* Apila los botones sociales */
+    align-items: center; /* Centra los botones apilados */
+    gap: 0.8rem; /* Espacio entre ellos */
+    margin-bottom: 1.5rem;
+  }
   .social-btn {
-    width: 90%; /* Un botón por fila en pantallas muy pequeñas */
-    margin: 0.5rem auto;
+    width: 80%; /* Ocupa más ancho */
+    max-width: 280px; /* Limita el ancho para que no sean demasiado grandes */
+    margin: 0.4rem 0; /* Ajusta el margen vertical */
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  .social-btn .social-icon {
+    font-size: 1.2rem;
+    margin-right: 0.6rem;
+  }
+  .social-text {
+    font-size: 1rem;
+  }
+}
+
+/* Para pantallas muy pequeñas (iPhone SE, etc.) */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .category-title {
+    font-size: 1.6rem;
+  }
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header nav li a {
+    font-size: 0.85rem;
+  }
+  .btn-primary, .btn-order-whatsapp {
+    font-size: 1rem;
+    padding: 0.7rem 1.4rem;
+    width: 95%; /* Casi todo el ancho */
+  }
+  .btn-order-whatsapp .social-icon {
+    font-size: 1.2rem;
+  }
+  .store-image {
+    max-width: 95%;
+  }
+  .card {
+    padding: 1rem;
+  }
+  .text-food-title {
+    font-size: 1.2rem;
+  }
+  .text-food-price {
+    font-size: 1.5rem;
+  }
+  .social-btn {
+    width: 90%;
   }
 }

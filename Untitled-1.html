@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandoichi no Michi - Tu Tienda de Sándwiches Favorita</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="antialiased">
+
+  <div id="preloader">
+    <div class="cat-loader">🐱</div>
+    <div class="spinner"></div>
+    <div class="preloader-text">Cargando la delicia...</div>
+  </div>
+
+  <header class="bg-gradient-to-r from-amber-600 to-amber-800 text-white py-6 shadow-lg rounded-b-xl">
+    <div class="container flex flex-col md:flex-row justify-between items-center">
+      <h1 class="text-4xl font-bold mb-4 md:mb-0">Sandoichi no Michi</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#inicio" class="hover:text-amber-200 transition duration-300">Inicio</a></li>
+          <li><a href="#menu" class="hover:text-amber-200 transition duration-300">Menú</a></li>
+          <li><a href="#ubicacion" class="hover:text-amber-200 transition duration-300">Ubicación</a></li>
+          <li><a href="#contacto" class="hover:text-amber-200 transition duration-300">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio" class="py-16">
+    <div class="container text-center">
+      <h2 class="section-title">¡Bienvenido a Sandoichi no Michi!</h2>
+      <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+        Descubre el sabor auténtico de Japón en cada bocado con nuestros sándwiches frescos y deliciosos.
+      </p>
+      <img src="img/sanodichi.jpg" alt="Tienda Sandoichi" class="store-image" />
+      
+      <a href="#menu" class="btn-primary mt-8">Explora Nuestro Menú</a> 
+      
+    </div>
+  </section>
+
+  <section id="menu" class="py-16">
+    <div class="container">
+      <h2 class="section-title">Nuestro Delicioso Menú</h2>
+
+      <div class="text-center mb-12">
+        <a href="https://wa.me/5219995756739?text=¡Hola! Me gustaría hacer un pedido de su menú en Sandoichi no Michi 🥪" 
+           target="_blank" 
+           class="btn-order-whatsapp">
+          <span class="social-icon">📝</span> Ordena Aquí por WhatsApp
+        </a>
+      </div>
+
+      <h3 class="category-title">Para Ahorrar</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div class="card">
+          <h3 class="text-food-title">Morning Bliss</h3>
+          <p class="text-gray-600 mb-4">Pan blanco artesanal capeado con huevo relleno de jamón, queso manchego, jitomate, lechuga y cebolla caramelizada.</p>
+          <p class="text-food-price">$55 MXN</p>
+        </div>
+        <div class="card">
+          <h3 class="text-food-title">Cheesy Jam</h3>
+          <p class="text-gray-600 mb-4">Clásico sándwich americano de jamón y queso manchego con jitomate, lechuga y cebolla caramelizada.</p>
+          <p class="text-food-price">$45 MXN</p>
+        </div>
+      </div>
+
+      <h3 class="category-title">Mucho más sabor</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div class="card">
+          <h3 class="text-food-title">Meatbuster</h3>
+          <p class="text-gray-600 mb-4">Baguette brioche artesanal relleno de albóndiga de carne de cerdo con queso manchego en salsa boloñesa.</p>
+          <p class="text-food-price">$85 MXN</p>
+        </div>
+        <div class="card">
+          <h3 class="text-food-title">Arrachera Meowster</h3>
+          <p class="text-gray-600 mb-4">Baguette brioche artesanal relleno de arrachera, queso manchego, lechuga, jitomate y aguacate.</p>
+          <p class="text-food-price">$110 MXN</p>
+        </div>
+        <div class="card">
+          <h3 class="text-food-title">Buffalo Chicken Sandwich</h3>
+          <p class="text-gray-600 mb-4">Pan brioche artesanal relleno de pechuga crispy, queso manchego, lechuga, jitomate y pepinillos de la casa. (Pídelo con tu salsa favorita)</p>
+          <p class="text-food-price">$100 MXN</p>
+        </div>
+      </div>
+
+      <h3 class="category-title">Para la dieta</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div class="card">
+          <h3 class="text-food-title">Natural Crunch</h3>
+          <p class="text-gray-600 mb-4">Pan de centeno multigrano con pechuga a la plancha, jitomate, zanahoria, pepino, germinado y queso panela light.</p>
+          <p class="text-food-price">$90 MXN</p>
+        </div>
+        <div class="card">
+          <h3 class="text-food-title">Vitality Bite</h3>
+          <p class="text-gray-600 mb-4">Pan de centeno multigrano con pechuga de pavo, jitomate, zanahoria, pepino, germinado y queso panela light.</p>
+          <p class="text-food-price">$70 MXN</p>
+        </div>
+        <div class="card">
+          <h3 class="text-food-title">Atun Purrfeeto</h3>
+          <p class="text-gray-600 mb-4">Pan de centeno multigrano con atún mezclado con mayonesa, zanahoria, pepino, germinado, lechuga.</p>
+          <p class="text-food-price">$90 MXN</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 p-6 bg-yellow-100 rounded-xl shadow-inner">
+        <p class="text-xl font-bold text-yellow-800">¡Complementa tu sándwich!</p>
+        <p class="text-lg text-yellow-700 mt-2">Por solo <span class="font-bold">+$10.00 MXN</span>, llévate un té negro o té negro con limón (355 ml).</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="ubicacion" class="py-16">
+    <div class="container text-center">
+      <h2 class="section-title">Encuéntranos Aquí</h2>
+      <p class="text-lg text-gray-700 mb-8">
+        Estamos en Mérida, Yucatán, México. ¡Ven a probar nuestros sándwiches!
+      </p>
+      <div class="card p-0 overflow-hidden">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.3601986586227!2d-89.61978382474587!3d20.93804528068865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f56714c44b96e91%3A0x6c8a861267b4359c!2sSandoichi%20No%20Michi!5e0!3m2!1ses-419!2smx!4v1752422593264!5m2!1ses-419!2smx" 
+          width="100%" height="450" style="border:0;" 
+          allowfullscreen="" loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="rounded-xl"></iframe>
+        <p class="text-gray-700 mt-4">
+          <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.109860645609!2d-89.62002302509176!3d20.985959980645258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f56711a1d9a0d2f%3A0x6b8c8d8c8d8c8d8c!2sM%C3%A9rida%2C%20Yucat%C3%A1n%2C%20M%C3%A9xico!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx5" target="_blank"
+            class="text-amber-600 hover:underline">Ver en Google Maps</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto" class="bg-gray-800 text-white py-8 rounded-t-xl">
+    <div class="container text-center">
+      <h2 class="section-title text-white mb-8">¡Síguenos y Contáctanos!</h2>
+      
+      <div class="social-buttons mb-8 flex justify-center space-x-6 flex-wrap">
+        <a href="https://wa.me/9995756739?text=¡Hola! Me gustaría hacer un pedido en Sandoichi no Michi 🥪" 
+           target="_blank" 
+           class="social-btn whatsapp-btn">
+          <span class="social-icon">📱</span>
+          <span class="social-text">WhatsApp</span>
+        </a>
+        
+        <a href="https://www.instagram.com/sandoichinomichi" 
+           target="_blank" 
+           class="social-btn instagram-btn">
+          <span class="social-icon">📸</span>
+          <span class="social-text">Instagram</span>
+        </a>
+        
+        <a href="https://www.facebook.com/profile.php?id=61573552993123" 
+           target="_blank" 
+           class="social-btn facebook-btn">
+          <span class="social-icon">👥</span>
+          <span class="social-text">Facebook</span>
+        </a>
+      </div>
+      
+      <p class="mb-4">© 2025 Sandoichi no Michi. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        // Espera 3 segundos antes de empezar a desvanecer
+        setTimeout(function() {
+          preloader.style.opacity = '0'; // Hace que el preloader se desvanezca
+          setTimeout(function() {
+            preloader.style.display = 'none'; // Oculta el preloader una vez desvanecido
+          }, 1000); // 1000ms (1 segundo) es la duración de la transición CSS (a definir en CSS)
+        }, 3000); // 3000ms (3 segundos) de espera inicial
+      }
+    });
+  </script>
+
+</body>
+</html>

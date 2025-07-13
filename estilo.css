@@ -1,0 +1,477 @@
+/* --- ESTILOS MEJORADOS PARA LOS TÍTULOS DE CATEGORÍA DEL MENÚ --- */
+.category-title {
+  font-size: 2.8rem; /* Un poco más grande para destacar */
+  font-weight: 800; /* Más audaz */
+  color: #bf360c; /* Color naranja oscuro para un contraste cálido con el fondo de bambú */
+  text-align: center;
+  margin-top: 4rem; /* Más espacio arriba */
+  margin-bottom: 2.5rem; /* Más espacio abajo */
+  position: relative;
+  letter-spacing: 0.05em; /* Un poco de espacio entre letras */
+  text-transform: uppercase; /* Todo en mayúsculas para más impacto */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+  padding-bottom: 0.5rem; /* Espacio para el subrayado */
+}
+
+/* Pseudo-elemento para una línea decorativa o "subrayado" animado */
+.category-title::after {
+  content: '';
+  display: block;
+  width: 100px; /* Ancho inicial de la línea */
+  height: 6px; /* Grosor de la línea */
+  background: linear-gradient(to right, #ffb300, #fb8c00); /* Degradado de amarillo a naranja */
+  margin: 10px auto 0; /* Centra la línea */
+  border-radius: 3px; /* Bordes redondeados */
+  transform: scaleX(0); /* Inicialmente oculto */
+  transform-origin: center; /* Crece desde el centro */
+  transition: transform 0.5s ease-out; /* Animación de crecimiento */
+}
+
+/* Efecto al pasar el ratón por encima del título */
+.category-title:hover::after {
+  transform: scaleX(1); /* La línea se expande al 100% */
+}
+
+.category-title:hover {
+  color: #d84315; /* Color ligeramente más claro al pasar el ratón */
+}
+
+/* Puedes añadir un pequeño icono o emoji al lado del título si quieres un toque extra */
+/* Por ejemplo:
+.category-title.for-save::before { content: '💰 '; }
+.category-title.more-flavor::before { content: '🍖 '; }
+.category-title.for-diet::before { content: '🥗 '; }
+Y luego añadir las clases `for-save`, `more-flavor`, `for-diet` a los respectivos <h3> en tu HTML
+*/
+
+/* Resto de tu CSS (sin cambios aquí) */
+/* Estilos para la Pantalla de Carga */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fefcf6; /* Un color crema muy suave, como un pan recién horneado */
+  display: flex;
+  flex-direction: column; /* Para apilar el spinner y el texto */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura que esté por encima de todo lo demás */
+  transition: opacity 1s ease-out; /* AHORA ES 1 SEGUNDO PARA COINCIDIR CON EL JS */
+}
+
+.cat-loader {
+  font-size: 8rem; /* Tamaño grande para el emoji de gato */
+  animation: bounceCat 2s infinite alternate; /* Animación de rebote */
+  margin-bottom: 20px;
+}
+
+@keyframes bounceCat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 8px solid #f3f3f3; /* Color de fondo del spinner */
+  border-top: 8px solid #ffb300; /* Color de la parte animada (amarillo sándwich) */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite; /* Animación de giro */
+  margin-bottom: 20px; /* Espacio entre el spinner y el texto */
+}
+
+.preloader-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #a0522d; /* Color marrón tostado */
+  animation: pulseText 2s infinite alternate; /* Animación de pulsación para el texto */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseText {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.05); opacity: 0.8; }
+}
+
+
+/* --- FIN ESTILOS PANTALLA DE CARGA --- */
+
+
+/* Fuente general y fondo */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #4a4a4a; /* Gris oscuro suave */
+  line-height: 1.6; /* Mejora la legibilidad */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+
+  /* FONDO: Patrón de bambú */
+  background-image: url('img/bamboo-pattern.jpg'); /* Reemplaza con tu ruta de imagen */
+  background-repeat: repeat;
+  background-size: 200px; /* Ajusta el tamaño del patrón según tu imagen */
+  animation: moveBamboo 20s linear infinite; /* Animación sutil de desplazamiento */
+}
+
+/* Animación para el movimiento del fondo de bambú */
+@keyframes moveBamboo {
+  0% { background-position: 0 0; }
+  100% { background-position: 200px 200px; } /* Desplaza el fondo */
+}
+
+/* Pseudo-elemento de "vapor" o textura sutil (opcional, puedes comentarlo si no lo quieres) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 15% 70%, rgba(255,255,255,0.1) 0%, transparent 60%),
+    radial-gradient(circle at 80% 25%, rgba(255,255,255,0.08) 0%, transparent 70%),
+    radial-gradient(circle at 45% 90%, rgba(255,255,255,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 95% 5%, rgba(255,255,255,0.09) 0%, transparent 75%);
+  background-size: 300px 300px, 200px 200px, 150px 150px, 350px 350px;
+  animation: floatSoft 30s linear infinite alternate;
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Animación sutil para el pseudo-elemento */
+@keyframes floatSoft {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 60px); }
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Títulos de sección */
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #386641; /* Verde oscuro que recuerda al bambú */
+  margin-bottom: 2.5rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjeta de cada sándwich */
+.card {
+  background-color: rgba(255, 255, 255, 0.85); /* Más transparente para ver el bambú */
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(2px);
+}
+
+.card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.95); /* Ligeramente más opaco al pasar el ratón */
+}
+
+/* Pequeña "mordida" visual al pasar el ratón */
+.card:hover::before {
+  content: '🐾';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  opacity: 0.7;
+  transform: rotate(15deg);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 2;
+}
+
+/* Colores para nombres y precios (ligeramente ajustados para el tema bambú) */
+.text-food-title {
+  color: #1b5e20; /* Verde más intenso */
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+}
+
+.text-food-title:hover {
+  color: #2e7d32; /* Verde más claro al hacer hover */
+  letter-spacing: 1.5px;
+}
+
+.text-food-price {
+  color: #558b2f; /* Verde oliva */
+  font-size: 2.2rem;
+  font-weight: 700;
+  transition: color 0.2s ease, font-size 0.2s ease;
+}
+
+.text-food-price:hover {
+  color: #8bc34a; /* Verde lima al hacer hover */
+  font-size: 2.4rem;
+}
+
+/* Botón principal (color ajustado) */
+.btn-primary {
+  background-color: #aed581; /* Verde claro */
+  color: #1b5e20; /* Verde oscuro para el texto */
+  padding: 0.9rem 1.8rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background-color: #8bc34a; /* Verde lima al hacer hover */
+  transform: scale(1.05);
+}
+
+/* Efecto de "migas" o "partículas" para botón (color ajustado) */
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 80%); /* Blanco más suave */
+  transform: translate(-50%, -50%);
+  animation: popEffect 0.8s ease-out forwards;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Para activar el efecto 'pop' en hover */
+.btn-primary:hover::after {
+    animation: popEffect 0.8s ease-out forwards;
+}
+
+/* Reinicia la animación cuando el mouse sale para que se pueda repetir */
+.btn-primary:not(:hover)::after {
+    animation: none;
+    opacity: 0;
+}
+
+@keyframes popEffect {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 300%;
+    height: 300%;
+    opacity: 0;
+  }
+}
+
+/* Imagen de la tienda (sin cambios relevantes para el fondo) */
+.store-image {
+  max-width: 600px;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  margin: 0 auto 3rem auto;
+  display: block;
+  border: 5px solid #c8e6c9; /* Borde verde claro */
+  filter: saturate(1.1) brightness(1.05);
+}
+
+/* --- ESTILOS BOTONES SOCIALES --- */
+.social-buttons {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4a4a4a; /* Fondo gris oscuro por defecto */
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2.5rem; /* Muy redondeado */
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin: 0.5rem; /* Espacio entre botones */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  margin-right: 0.8rem;
+}
+
+.social-text {
+  font-size: 1.1rem;
+}
+
+/* Colores específicos para cada botón */
+.whatsapp-btn {
+  background-color: #25D366; /* Verde WhatsApp */
+  color: white;
+}
+.whatsapp-btn:hover {
+  background-color: #1DA851;
+}
+
+.instagram-btn {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  color: white;
+}
+.instagram-btn:hover {
+  opacity: 0.9;
+}
+
+.facebook-btn {
+  background-color: #1877F2; /* Azul Facebook */
+  color: white;
+}
+.facebook-btn:hover {
+  background-color: #145CB3;
+}
+
+/* Botón de ordenar por WhatsApp mejorado */
+.btn-order-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #25d366, #128c7e, #075e54);
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #25d366;
+  min-width: 280px;
+}
+
+.btn-order-whatsapp:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+  background: linear-gradient(135deg, #128c7e, #25d366, #1da851);
+  color: white;
+}
+
+.btn-order-whatsapp:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Efecto de brillo al pasar el mouse */
+.btn-order-whatsapp::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-order-whatsapp:hover::before {
+  left: 100%;
+}
+
+/* Animación del icono */
+.btn-order-whatsapp .social-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Efecto de partículas al hacer hover */
+.btn-order-whatsapp::after {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-order-whatsapp:hover::after {
+  opacity: 1;
+  transform: translateY(-5px) rotate(360deg);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  .category-title {
+    font-size: 2rem; /* Ajustado para móviles */
+  }
+  .text-food-title {
+    font-size: 1.4rem;
+  }
+  .text-food-price {
+    font-size: 1.8rem;
+  }
+  .social-btn {
+    width: calc(50% - 1rem); /* 2 botones por fila en móviles */
+  }
+  .social-buttons {
+    flex-direction: row; /* Asegura que se envuelvan */
+  }
+  .btn-order-whatsapp {
+    min-width: 250px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-btn {
+    width: 90%; /* Un botón por fila en pantallas muy pequeñas */
+    margin: 0.5rem auto;
+  }
+}
